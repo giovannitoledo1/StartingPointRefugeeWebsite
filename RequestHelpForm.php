@@ -42,20 +42,22 @@
             <option value="diversity visa">
         </datalist>
         <p> Do you speak english?: </p> 
-        <input type="radio" id="yes" name="speak_english" value="yes" size="15">
-        <label for="yes">Yes</label><br>
-        <input type="radio" id="no" name="speak_english" value="no" size="15">
-        <label for="no">No</label><br>
-
-        <div class="child_info">
+        <div class="radio-div">
+        <label class="radio-label">Yes<input type="radio" id="yes" name="speak_english" value="yes" size="5"></label>
+        <label class="radio-label">No<input type="radio" id="no" name="speak_english" value="no" size="5"></label>
+        </div>
+        <br><br>
+        <div class="child-info-div">
             <input type="text" class="child_info" size="15" placeholder="Name of Child"/>
             <input type="number" class="child_info" size="15" placeholder="Age of Child"/>
             <input type="text" class="child_info" size="15" placeholder="Gender of Child"/>
         </div>
-        <div class="controls">
-            <a href="#" id="add_more_fields">Add Another Child</a>
-            <a href="#" id="remove_fields">Remove Child</a>
+        
+        <div class="change-fields">
+        <a href="#" id="add_more_fields" name="add_more_fields">Add Another Child</a>
+        <a href="#" id="remove_fields" name="remove_more_fields">Remove Child</a>
         </div>
+        <div id="children"></div>
         <br>
         <input type="submit" name="submit" value="SUBMIT"/> 
     </form>

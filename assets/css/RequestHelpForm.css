@@ -17,4 +17,32 @@ label {
 input {
   display: block;
   width: 100%;
+  margin: 0 auto;
+  padding: 7px;
+}
+
+.radio-label {
+  float: left;
+  clear: none;
+  display: block;
+  padding: 0px 1em 0px 8px;
+}
+
+#yes,
+#no {
+  float: left;
+  clear: none;
+  margin: 2px 0 0 2px;
+}
+
+.radio-div {
+  padding-bottom: 12px;
+}
+
+.child-info-div {
+  padding-bottom: 12px;
+}
+
+.change-fields {
+  padding-bottom: 12px;
 }
