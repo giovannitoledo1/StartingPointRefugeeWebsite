@@ -1,108 +1,71 @@
 <?php the_content(); 
 
 /*Template Name: SPRequestHelpForm */
-get_header();
+// get_header();
 ?>
 
-<HTML>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Help</title>
+    <!-- <link rel="stylesheet" href="assets/css/RequestHelpForm.css" type="text/css"> -->
+    <style> <?php include 'assets/css/RequestHelpForm.css'; ?> </style>
+</head>
+<body>
+    <p> 
+    If you are a newcomer and your children need basic necessities, please complete the form below.  
+    We will contact you soon with more information about becoming a Starting Point family.
+    </p>
 
-<p> 
-If you are a newcomer and your children need basic necessities, please complete the form below.  
-We will contact you soon with more information about becoming a Starting Point family.
-</p>
+    <form class="request-help-form" action="" method="post" id="contact" onsubmit="">
+        <label for="first-name"> First Name: </label> <input type="text" id="first-name" name="firstNameTextbox" size="15" />
+        <label for="last-name"> Last Name: </label> <input type="text" id="last-name" name="lastNameTextbox"size="15" />
+        <label> Address: </label> <input type="text" name="addressTextbox" size="15" />
+        <label> Phone: </label> <input type="tel" name="phoneTextbox" size="15" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" />
+        <label> Country of Origin: </label> <input type="text" name="countryTextbox" size="15" />
+        <label> Country of Origin: </label> <input list="country" name="countryTextbox" size="15" />
+        <datalist id="country">
+            <option value="Afghanistan">
+            <option value="Ukrain">
+            <option value="Mexico">
+        </datalist>
+        <label> Arrival Date to Sacramento: </label> <input type="date" name="arivalDateTextbox" size="15" />
+        <label> Immigration Status: </label> <input list="status" name="statusTextbox" size="15" >
+        <datalist id="status">
+            <option value="SIV">
+            <option value="evacuee">
+            <option value="parolee">
+            <option value="asylee">
+            <option value="diversity visa">
+        </datalist>
+        <p> Do you speak english?: </p> 
+        <input type="radio" id="yes" name="speak_english" value="yes" size="15">
+        <label for="yes">Yes</label><br>
+        <input type="radio" id="no" name="speak_english" value="no" size="15">
+        <label for="no">No</label><br>
 
-<form action="" method="post" id="contact" onsubmit="" style="text-align: center;">
+        <div class="child_info">
+            <input type="text" class="child_info" size="15" placeholder="Name of Child"/>
+            <input type="number" class="child_info" size="15" placeholder="Age of Child"/>
+            <input type="text" class="child_info" size="15" placeholder="Gender of Child"/>
+        </div>
+        <div class="controls">
+            <a href="#" id="add_more_fields">Add Another Child</a>
+            <a href="#" id="remove_fields">Remove Child</a>
+        </div>
+        <br>
+        <input type="submit" name="submit" value="SUBMIT"/> 
+    </form>
+    
+    <!-- <script type="text/javascript" src="assets/js/RequestHelpForm.js"></script> -->
+    <script> <?php include 'assets/js/RequestHelpForm.js'; ?> </script>
+</body>
+</html>
 
-<label> First Name: </label> <input type="text" name="firstNameTextbox" size="15" />
-<label> Last Name: </label> <input type="text" name="lastNameTextbox"size="15" />
-<label> Address: </label> <input type="text" name="addressTextbox" size="15" />
-<label> Phone: </label> <input type="tel" name="phoneTextbox" size="15" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" />
-<label> Country of Origin: </label> <input type="text" name="countryTextbox" size="15" />
-<label> Country of Origin: </label> <input list="country" name="countryTextbox" size="15" />
-<datalist id="country">
-    <option value="Afghanistan">
-    <option value="Ukrain">
-    <option value="Mexico">
-</datalist>
-<label> Arrival Date to Sacramento: </label> <input type="date" name="arivalDateTextbox" size="15" />
-<label> Immigration Status: </label> <input list="status" name="statusTextbox" size="15" >
-<datalist id="status">
-    <option value="SIV">
-    <option value="evacuee">
-    <option value="parolee">
-    <option value="asylee">
-    <option value="diversity visa">
-</datalist>
-<label> Do you speak english?: </label> 
-<input type="checkbox" id="yes" name="arivalDateTextbox" size="15" checked/>
-<label for="yes">Yes</label>
-<input type="checkbox" id="no" name="arivalDateTextbox" size="15" checked/>
-<label for="no">No</label>
-
-<div class="child_info">
-    <input type="text" class="child_info" size="15" placeholder="Name of Child"/>
-    <input type="number" class="child_info" size="15" placeholder="Age of Child"/>
-    <input type="text" class="child_info" size="15" placeholder="Gender of Child"/>
-</div>
-<div class="controls">
-    <a href="#" id="add_more_fields">Add Another Child</a>
-    <a href="#" id="remove_fields">Remove Child</a>
-</div>
-
-<script type="text/javascript">
-var child_info = document.getElementById('child_info');
-var add_more_fields = document.getElementById('add_more_fields');
-var remove_fields = document.getElementById('remove_fields');
-
-add_more_fields.onclick = function(){
-  var nameField = document.createElement('input');
-  nameField.setAttribute('type','text');
-  nameField.setAttribute('class','child_info');
-  nameField.setAttribute('size',15);
-  nameField.setAttribute('placeholder','Name of Child');
-  child_info.appendChild(nameField);
-  var ageField = document.createElement('input');
-  ageField.setAttribute('type','number');
-  ageField.setAttribute('class','child_info');
-  ageField.setAttribute('size',15);
-  ageField.setAttribute('placeholder','Age of Child');
-  child_info.appendChild(ageField);
-  var genderField = document.createElement('input');
-  genderField.setAttribute('type','text');
-  genderField.setAttribute('class','child_info');
-  genderField.setAttribute('size',15);
-  genderField.setAttribute('placeholder','Gender of Child');
-  child_info.appendChild(genderField);
-}
-
-remove_fields.onclick = function(){
-  var input_tags = survey_options.getElementsByTagName('input');
-  if(input_tags.length > 2) {
-    survey_options.removeChild(input_tags[(input_tags.length) - 1]);
-  }
-}
-</script>
-
-<style>
- form {
-        padding-left: 700px;
-        padding-right: 700px;
-    }
-    label {
-        text-align: left;
-        padding-top: 15px;
-    }
-</style>
-
-<br>
-
-<input type="submit" name="submit" value="SUBMIT"/>
-
-</form>
-
-</HTML>
-
-<?php
+<!-- <?php
 
 if($_POST['submit'])
 {
@@ -129,5 +92,5 @@ if($_POST['submit'])
 
 }
 
-get_footer();
-?>
+// get_footer();
+?> -->
