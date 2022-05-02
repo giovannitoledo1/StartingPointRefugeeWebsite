@@ -19,6 +19,7 @@ input {
   width: 100%;
   margin: 0 auto;
   padding: 7px;
+  margin-bottom: 10px;
 }
 
 .radio-label {

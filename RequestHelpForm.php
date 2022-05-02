@@ -55,6 +55,7 @@
         
         <div class="change-fields">
         <a href="#" id="add_more_fields" name="add_more_fields">Add Another Child</a>
+        &emsp;
         <a href="#" id="remove_fields" name="remove_more_fields">Remove Child</a>
         </div>
         <div id="children"></div>
