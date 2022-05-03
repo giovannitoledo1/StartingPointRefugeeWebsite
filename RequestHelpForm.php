@@ -15,7 +15,7 @@ get_header();
     <style> <?php include 'assets/css/RequestHelpForm.css'; ?> </style>
 </head>
 <body>
-    <p> 
+    <p style="text-align: center; max-width: 600px; margin-left: 300px;" align="center" > 
     If you are a newcomer and your children need basic necessities, please complete the form below.  
     We will contact you soon with more information about becoming a Starting Point family.
     </p>
