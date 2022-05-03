@@ -15,7 +15,7 @@ get_header();
     <style> <?php include 'assets/css/RequestHelpForm.css'; ?> </style>
 </head>
 <body>
-    <p style="text-align: center; max-width: 600px; margin-left: 300px;" align="center" > 
+    <p style="text-align: center; max-width: 600px; margin-left: 300px; font-size: 20px;" align="center" > 
     If you are a newcomer and your children need basic necessities, please complete the form below.  
     We will contact you soon with more information about becoming a Starting Point family.
     </p>
@@ -25,7 +25,7 @@ get_header();
         <label for="last-name"> Last Name: </label> <input type="text" id="last-name" name="lastNameTextbox"size="15" />
         <label> Address: </label> <input type="text" name="addressTextbox" size="15" />
         <label> Phone: </label> <input type="tel" name="phoneTextbox" size="15" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" />
-        <label> Country of Origin: </label> <input type="text" name="countryTextbox1" size="15" />
+        <!-- <label> Country of Origin: </label> <input type="text" name="countryTextbox1" size="15" /> -->
         <label> Country of Origin: </label> <input list="country" name="countryTextbox" size="15" />
         <datalist id="country">
             <option value="Afghanistan">

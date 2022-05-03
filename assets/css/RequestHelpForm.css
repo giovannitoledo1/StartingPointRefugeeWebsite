@@ -9,14 +9,14 @@ label {
 
 /* -----  No theme -----  */
 html {
-  padding-left: 400px;
+  padding-left: 300px;
   padding-right: 400px;
 }
 p {
 }
 .request-help-form {
   margin-top: 50px;
-  margin-left: 300px;
+  margin-left: 250px;
   padding-top: 50px;
   padding-bottom: 50px;
   padding-left: 100px;
