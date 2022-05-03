@@ -1,7 +1,7 @@
 <?php the_content(); 
 
 /*Template Name: SPRequestHelpForm */
-// get_header();
+get_header();
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +25,7 @@
         <label for="last-name"> Last Name: </label> <input type="text" id="last-name" name="lastNameTextbox"size="15" />
         <label> Address: </label> <input type="text" name="addressTextbox" size="15" />
         <label> Phone: </label> <input type="tel" name="phoneTextbox" size="15" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" />
-        <label> Country of Origin: </label> <input type="text" name="countryTextbox" size="15" />
+        <label> Country of Origin: </label> <input type="text" name="countryTextbox1" size="15" />
         <label> Country of Origin: </label> <input list="country" name="countryTextbox" size="15" />
         <datalist id="country">
             <option value="Afghanistan">
@@ -48,9 +48,9 @@
         </div>
         <br><br>
         <div class="child-info-div">
-            <input type="text" class="child_info" size="15" placeholder="Name of Child"/>
-            <input type="number" class="child_info" size="15" placeholder="Age of Child"/>
-            <input type="text" class="child_info" size="15" placeholder="Gender of Child"/>
+            <input name="childNameTextbox" type="text" class="child_info" size="15" placeholder="Name of Child"/>
+            <input name="childAgeTextbox" type="number" class="child_info" size="15" placeholder="Age of Child"/>
+            <input name="childGenderTextbox" type="text" class="child_info" size="15" placeholder="Gender of Child"/>
         </div>
         
         <div class="change-fields">
@@ -69,31 +69,31 @@
 </html>
 
 <!-- <?php
-
 if($_POST['submit'])
 {
     $wpdb;
     $firstname=$_POST['firstNameTextbox'];
     $lastname=$_POST['lastNameTextbox'];
+    $address =$_POST['addressTextbox'];
     $phone=$_POST['phoneTextbox'];
-    $email=$_POST['emailTextbox'];
-    $date=$_POST['dateTextbox'];
-    $inquiry=$_POST['inquiryTextbox'];
-
+    $country=$_POST['countryTextbox'];
+    $arivaldate=$_POST['arivalDateTextbox'];
+    $status=$_POST['statusTextbox'];
+    $childname=$_POST['childNameTextbox'];
+    $childage=$_POST['childAgeTextbox'];
+    $childgender=$_POST['childGenderTextbox'];
     $toEmail = "alexlux@live.com";
-	$mailHeaders = "From: " . $firstname . $lastname . "<". $email .">\r\n";
-	if(mail($toEmail, $date, $inquiry, $mailHeaders)) {
+	$mailHeaders = "From: " . $firstname . $lastname . "<". $country .">\r\n";
+	if(mail($toEmail, $status, $arivaldate, $mailHeaders)) {
 	    $message = "Your contact information is received successfully.";
 	    $type = "success";
 	}
-
-    if ($wpdb->insert('contactInfo', array('firstname'=>$firstname, 'lastname'=>$lastname, 'phone'=>$phone, 'email'=>$email)) == false) wp_die('Database is down try again later');
+    if ($wpdb->insert('parentInfo', array('firstname'=>$firstname, 'lastname'=>$lastname, 'address'=>$address,
+                        'phone'=>$phone, 'country'=>$country, 'arivaldate'=>$arivaldate, 'status'=>$status)) == false) wp_die('Database is down try again later');
     else
-        $contactid=$wpdb->get_var("Select max(contactid) from contactInfo");
-        $wpdb->insert('contactInquiry', array('date'=>$date, 'inquiry'=>$inquiry, 'contactid'=>$contactid));
+        $parentid=$wpdb->get_var("Select max(parentid) from parentInfo");
+        $wpdb->insert('childInfo', array('childname'=>$childname, 'childage'=>$childage, 'childgender'=>$childgender, 'parentid'=>$parentid));
         echo '<br><br> CONTACT FORM SUBMITTED';
-
 }
-
-// get_footer();
+get_footer();
 ?> -->
